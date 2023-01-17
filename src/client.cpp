@@ -2,7 +2,8 @@
 
 const int MAX_BUFFER_SIZE = 1024;
 
-int main() {
+int main()
+{
 
     static WSADATA wsaData;
     int wsaerr = WSAStartup(MAKEWORD(2, 0), &wsaData);
@@ -16,7 +17,7 @@ int main() {
     server_address.sin_port = htons(PORT);
     server_address.sin_addr.s_addr = inet_addr(SERVER_IP);
 
-    connect(client_socket, (struct sockaddr*) &server_address, sizeof(server_address));
+    connect(client_socket, (struct sockaddr *)&server_address, sizeof(server_address));
 
     std::cout << "Connected to server" << std::endl;
 
